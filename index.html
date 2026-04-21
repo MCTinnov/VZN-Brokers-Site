@@ -1484,68 +1484,62 @@
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to <span>Get Funded</span>?</h2>
-                <p style="font-size: 18pt; font-weight: 600; margin-bottom: 16px;">Speak With A Business Financing Advisor Today!</p>
-                <p style="font-size: 14pt; margin-bottom: 30px;">Our Business Financing Advisors will help you find the best financing options for your business to get you more funding, great terms, and the lowest interest. We're available to explain every step of the process from applications to your re-payment schedule!</p>
-                <form class="cta-form" id="advisorForm" action="https://formsubmit.co/mctinnovations@proton.me" method="POST" onsubmit="handleFormSubmit(event)">
-    <input type="hidden" name="_subject" value="New VZN Brokers Lead">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="business_name" placeholder="Business Name" required>
-    <input type="text" name="owner_name" placeholder="Owner's Name" required>
-    <input type="email" name="business_email" placeholder="Business Email" required>
-    <input type="tel" name="business_phone" placeholder="Business Phone" required>
-    <button type="submit">Speak With An Advisor</button>
-</form>
-
-            </div>
+<!-- CTA Section -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to <span>Get Funded</span>?</h2>
+            <p style="font-size: 18pt; font-weight: 600; margin-bottom: 16px;">Speak With A Business Financing Advisor Today!</p>
+            <p style="font-size: 14pt; margin-bottom: 30px;">Our Business Financing Advisors will help you find the best financing options for your business to get you more funding, great terms, and the lowest interest. We're available to explain every step of the process from applications to your re-payment schedule!</p>
+            <form class="cta-form" id="advisorForm" action="https://formsubmit.co/mctinnovations@proton.me" method="POST" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" name="_subject" value="New VZN Brokers Lead">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="business_name" placeholder="Business Name" required>
+                <input type="text" name="owner_name" placeholder="Owner's Name" required>
+                <input type="email" name="business_email" placeholder="Business Email" required>
+                <input type="tel" name="business_phone" placeholder="Business Phone" required>
+                <button type="submit">Speak With An Advisor</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
-   <script>
+<script>
     document.querySelector('.cta-form').addEventListener('submit', function(e) {
         alert('Thank you! We will contact you shortly.');
     });
+
+    // Navigation scroll effect
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        // Hide/show back to top button based on scroll position
+        if (window.scrollY > 300) {
+            backToTop.classList.remove('hidden');
+        } else {
+            backToTop.classList.add('hidden');
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 </script>
-
-        // Navigation scroll effect
-        const navbar = document.getElementById('navbar');
-        const backToTop = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            // Hide/show back to top button based on scroll position
-            if (window.scrollY > 300) {
-                backToTop.classList.remove('hidden');
-            } else {
-                backToTop.classList.add('hidden');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-
-
-<script>
 /**
  * Iframe 元素高亮注入脚本
  * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
