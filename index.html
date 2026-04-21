@@ -1495,10 +1495,12 @@
                 <input type="hidden" name="_subject" value="New VZN Brokers Lead">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://yoursite.com">
-                <input type="text" name="business_name" placeholder="Business Name" required>
-                <input type="text" name="owner_name" placeholder="Owner's Name" required>
-                <input type="email" name="business_email" placeholder="Business Email" required>
-                <input type="tel" name="business_phone" placeholder="Business Phone" required>
+                <input type="text" name="full_name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone_number" placeholder="Phone Number" required>
+                <input type="text" name="company_name" placeholder="Company Name" required>
+                <input type="text" name="loan_purpose" placeholder="Loan Purpose" required>
+                <input type="text" name="monthly_revenue" placeholder="Monthly Revenue" required>
                 <button type="submit">Speak With An Advisor</button>
             </form>
         </div>
@@ -1510,7 +1512,7 @@
         e.preventDefault();
         
         // Show thank you message
-        alert('Thank you! An advisor will contact you shortly.');
+        alert('Thank you! We will contact you shortly.');
         
         // Submit form in background
         fetch(this.action, {
