@@ -1506,20 +1506,26 @@
         </div>
     </div>
 </section>
-
 <script>
-    document.querySelector('.cta-form').addEventListener('submit', function(e) {
+    const form = document.querySelector('.cta-form');
+    
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Show thank you message
-        alert('Thank you! We will contact you shortly.');
+        alert('Thank you! An advisor will contact you shortly.');
         
         // Submit form in background
         fetch(this.action, {
             method: 'POST',
             body: new FormData(this)
-        }).then(() => {
-            this.reset();
+        }).then(response => {
+            // Reset the form after successful submission
+            form.reset();
+        }).catch(error => {
+            console.error('Form submission error:', error);
+            // Still reset the form even if there's an error
+            form.reset();
         });
     });
 
