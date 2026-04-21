@@ -1491,9 +1491,10 @@
             <h2>Ready to <span>Get Funded</span>?</h2>
             <p style="font-size: 18pt; font-weight: 600; margin-bottom: 16px;">Speak With A Business Financing Advisor Today!</p>
             <p style="font-size: 14pt; margin-bottom: 30px;">Our Business Financing Advisors will help you find the best financing options for your business to get you more funding, great terms, and the lowest interest. We're available to explain every step of the process from applications to your re-payment schedule!</p>
-            <form class="cta-form" id="advisorForm" action="https://formsubmit.co/mctinnovations@proton.me" method="POST" onsubmit="handleFormSubmit(event)">
+            <form class="cta-form" id="advisorForm" action="https://formsubmit.co/mctinnovations@proton.me" method="POST">
                 <input type="hidden" name="_subject" value="New VZN Brokers Lead">
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://yoursite.com">
                 <input type="text" name="business_name" placeholder="Business Name" required>
                 <input type="text" name="owner_name" placeholder="Owner's Name" required>
                 <input type="email" name="business_email" placeholder="Business Email" required>
@@ -1506,7 +1507,18 @@
 
 <script>
     document.querySelector('.cta-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show thank you message
         alert('Thank you! We will contact you shortly.');
+        
+        // Submit form in background
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
+        }).then(() => {
+            this.reset();
+        });
     });
 
     // Navigation scroll effect
