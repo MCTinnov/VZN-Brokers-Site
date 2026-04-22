@@ -280,12 +280,13 @@
         }
 
         /* Trust Bar */
+        
+        /* Trust Bar */
         .trust-bar {
             background: var(--charcoal);
             padding: 60px 0;
             position: relative;
         }
-
         .trust-bar::before {
             content: '';
             position: absolute;
@@ -295,17 +296,14 @@
             height: 4px;
             background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
         }
-
         .trust-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 40px;
         }
-
         .trust-stat {
             text-align: center;
         }
-
         .trust-stat-number {
             font-family: 'Montserrat', sans-serif;
             font-size: 48px;
@@ -314,12 +312,20 @@
             line-height: 1;
             margin-bottom: 8px;
         }
-
         .trust-stat-label {
             color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        .trust-bar-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
 
         /* Services Section */
